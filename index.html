@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="image/png" href="image/favicon.png" rel="shortcut icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="style.css">
+    <title>Flappy bird</title>
+</head>
+
+<body>
+    <div class="main">
+        <div class="menu">
+            <div class="play"><img src="image/buttonStart.png" alt="Старт игры"></div>
+            <div class="records"><img src="image/score1.png" alt="Рекорды"></div>
+        </div>
+    </div>
+    <audio id="audioMain" src="audio/main_menu.mp3" loop autoplay></audio>
+    <div class="table">
+        <div class="back_button"></div>
+        <div class="tableRecordsWrapper">
+            <h1>Лучшие игроки:</h1>
+            <div class="tableRecords"></div>
+        </div>
+    </div>
+    <div class="wrapper">
+        <canvas id="myCanvas">Если вы видите это, значит вам не повезло,
+            обновите
+            браузер</canvas>
+    </div>
+    <div class="gameover">
+        <div class="gameover_screen">
+            <div class="points"></div>
+            <div class="restart"></div>
+            <div class="save"></div>
+            <div class="exit"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

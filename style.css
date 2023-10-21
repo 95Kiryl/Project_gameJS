@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+
+/* Стили для стартовой страницы */
+.main {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    background: url("image/MainMenu.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.menu {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    bottom: 50px;
+    width: 70%;
+    height: 20%;
+}
+
+.play {
+    position: absolute;
+    left: 56px;
+    width: 36%;
+    height: 100%;
+}
+
+.records {
+    position: absolute;
+    height: 30%;
+    width: 30%;
+    right: 20px;
+    width: 36%;
+    height: 100%;
+}
+
+img {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: absolute;
+    width: 160px;
+    height: 130px;
+    top: -14%;
+    left: calc(50% - 75px);
+    cursor: pointer;
+    transition: transform 0.5s;
+}
+
+img:hover {
+    transform: scale(1.1);
+}
+
+
+/* Стили для игровой страницы */
+.wrapper {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    background: url("image/back.png");
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    display: none;
+}
+
+canvas {
+    position: absolute;
+}
+
+
+/* Стили для таблицы рекордов страницы */
+.table{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.8;
+    background: rgba(1, 164, 1, 0.192);
+    z-index: 1;
+    display: none;
+}
+
+
+.tableRecordsWrapper {
+    font-family: 'Press Start 2P';
+    width: 60%;
+    height: 60%;
+    overflow: auto;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.tableRecords {
+    width: 100%;
+    height: 66%;
+}
+
+h1 {
+    text-align: center;
+    color:rgb(0, 0, 0);
+}
+
+
+.back_button {
+    position: absolute;
+    background-image: url(image/cross.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 50px;
+    width: 50px;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+}
+
+audio {
+    display: none;
+}
+
+
+/* Стили для страницы проигрыша*/
+.gameover {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    z-index: 1;
+    background: rgba(0, 196, 226, 0.455);
+    display: none;
+    justify-content: center;
+    align-items:center;
+}
+
+.gameover_screen {
+    width: 40%;
+    height: 40%;
+    position: absolute;
+    color: red;
+    font-size: large;
+}
+
+.points {
+    position: absolute;
+    width: 100%;
+    height: 30%;
+    top: 5%;
+}
+
+.restart {
+    position: absolute;
+    width: 30%;
+    height: 50%;
+    bottom: 5%;
+    left: 2%;
+    cursor: pointer;
+    background: url("image/restart.png")  no-repeat center center;
+    background-size: 100%;
+}
+
+.save {
+    position: absolute;
+    width: 30%;
+    height: 50%;
+    bottom: 5%;
+    left: 35%;
+    cursor: pointer;
+    background: url("image/save.png")  no-repeat center center;
+    background-size: 100%;
+}
+
+.exit {
+    position: absolute;
+    width: 30%;
+    height: 50%;
+    bottom: 5%;
+    right: 2%;
+    cursor: pointer;
+    background: url("image/exit.png")  no-repeat center center;
+    background-size: 100%;
+}
+
+
