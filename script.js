@@ -115,6 +115,7 @@ window.addEventListener('load', () => {
 
     // Страница проигрыша
     const gameOverPage = (score) => {
+        window.navigator.vibrate(1000);
         gameover.style.display = 'flex';
         points.innerHTML = `Ваш результат: ${score}`;
         saveScore = score;
@@ -315,7 +316,6 @@ window.addEventListener('load', () => {
         // Условия касаний
         const update = () => {
             if (openGameOverPage && pageOpen) {
-                window.navigator.vibrate(1000);
                 pageOpen = false;
                 gameOverPage(score);
             }
