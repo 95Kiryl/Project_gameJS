@@ -218,7 +218,7 @@ window.addEventListener('load', () => {
 
 
         //движение труб
-        let runPipes = 2;
+        let runPipes = 3;
 
 
         // Сила притяжения
@@ -390,11 +390,11 @@ window.addEventListener('load', () => {
                 birdImage = false;
                 gameOpen = false;
                 openGameOverPage = true;
+                window.navigator.vibrate(1000);
                 cancelAnimationFrame(bombAnimation);
             } else if (timeAnimationBomb <= 14) {
                 context.drawImage(bomb, bombSpraitPositionX, 17, 54, 51, birdPosX, birdPosY, birdWidth, birdHeight);
                 timeAnimationBomb += 1;
-                window.navigator.vibrate(2000);
                 requestAnimationFrame(bombAnimation);
             }
         }
