@@ -315,6 +315,7 @@ window.addEventListener('load', () => {
         // Условия касаний
         const update = () => {
             if (openGameOverPage && pageOpen) {
+                window.navigator.vibrate(1000);
                 pageOpen = false;
                 gameOverPage(score);
             }
@@ -390,7 +391,6 @@ window.addEventListener('load', () => {
                 birdImage = false;
                 gameOpen = false;
                 openGameOverPage = true;
-                window.navigator.vibrate(1000);
                 cancelAnimationFrame(bombAnimation);
             } else if (timeAnimationBomb <= 14) {
                 context.drawImage(bomb, bombSpraitPositionX, 17, 54, 51, birdPosX, birdPosY, birdWidth, birdHeight);
