@@ -116,7 +116,6 @@ window.addEventListener('load', () => {
     // Страница проигрыша
     const gameOverPage = (score) => {
         window.navigator.vibrate(1000);
-        window.navigator.vibrate(0);
         gameover.style.display = 'flex';
         points.innerHTML = `Ваш результат: ${score}`;
         saveScore = score;
