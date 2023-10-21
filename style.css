@@ -156,6 +156,7 @@ audio {
 }
 
 .points {
+    font-family: 'Press Start 2P';
     position: absolute;
     width: 100%;
     height: 30%;
