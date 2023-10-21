@@ -20,7 +20,8 @@ window.addEventListener('load', () => {
     // Переменные для вывода результатов
     let saveScore = 0,
         saveName = '',
-        requestAnimation;
+        timerRequestAnimation,
+        timerId;
 
     // Запуск музыки
     mainMenuSound.src = 'audio/main_menu.mp3';
@@ -30,7 +31,6 @@ window.addEventListener('load', () => {
 
     // Запуск игры
     play.addEventListener('click', () => {
-        cancelAnimation(requestAnimation);
         mainMenuSound.pause();
         mainMenuSound.currentTime = 0.0;
         mainPage.style.display = 'none';
@@ -74,7 +74,11 @@ window.addEventListener('load', () => {
 
     // Перезагрузка игры
     restart.addEventListener('click', () => {
-        cancelAnimation(requestAnimation);
+        // остановка и перезапуск игрового цикла
+        cancelAnimationFrame(timerRequestAnimation);
+        if (timerId) {
+            clearInterval(timerId);
+        }
         gameover.style.display = 'none';
         wrapper.style.display = 'flex';
         startGame();
@@ -110,7 +114,11 @@ window.addEventListener('load', () => {
 
     //Возврат к главному меню 
     exit.addEventListener('click', () => {
-        cancelAnimation(requestAnimation);
+        // Остановка игрового цикла
+        cancelAnimationFrame(timerRequestAnimation);
+        if (timerId) {
+            clearInterval(timerId);
+        }
         gameover.style.display = 'none';
         wrapper.style.display = 'none';
         mainPage.style.display = 'flex';
@@ -223,7 +231,7 @@ window.addEventListener('load', () => {
 
 
         //движение труб
-        let runPipes = 3;
+        let runPipes = 2.5;
 
 
         // Сила притяжения
@@ -272,7 +280,7 @@ window.addEventListener('load', () => {
             if (event.keyCode === 32) {
                 if (flyFrame) {
                     flying.play();
-                    birdPosY -= 30;
+                    birdPosY -= 33;
                     flyAnimation();
                 }
             }
@@ -283,7 +291,7 @@ window.addEventListener('load', () => {
         document.addEventListener('mousedown', () => {
             if (flyFrame) {
                 flying.play();
-                birdPosY -= 30;
+                birdPosY -= 33;
                 flyAnimation();
             }
         })
@@ -313,7 +321,14 @@ window.addEventListener('load', () => {
             }
             render();
             update();
-            requestAnimation(game);
+            timerRequestAnimation = requestAnimationFrame(game) ||
+                webkitRequestAnimationFrame(game) ||
+                mozRequestAnimationFrame(game) ||
+                oRequestAnimationFrame(game) ||
+                msRequestAnimationFrame(game) ||
+                function (callback) {
+                    timerId = window.setTimeout(callback, 1000 / 60);
+                };
         }
 
 
@@ -424,28 +439,5 @@ window.addEventListener('load', () => {
             context.font = '24px Verdana';
             context.fillText('Счёт: ' + score, 0, h / 12);
         }
-
-
-        // Игровой цикл для всех браузеров
-        requestAnimation = (() => {
-            return window.requestAnimationFrame ||
-                window.webkitRequestAnimationFrame ||
-                window.mozRequestAnimationFrame ||
-                window.oRequestAnimationFrame ||
-                window.msRequestAnimationFrame ||
-                function (callback) {
-                    const timerId = window.setTimeout(callback, 1000 / 60);
-                };
-        })();
     }
-    const cancelAnimation = (() => {
-        return window.cancelAnimationFrame ||
-            window.webkitCancelAnimationFrame ||
-            window.mozCancelAnimationFrame ||
-            window.oCancelAnimationFrame ||
-            window.msCancelAnimationFrame ||
-            function (callback) {
-                const timerId = window.setTimeout(callback, 1000 / 60);
-            };
-    });
 })
