@@ -19,7 +19,8 @@ window.addEventListener('load', () => {
 
     // Переменные для вывода результатов
     let saveScore = 0,
-        saveName = '';
+        saveName = '',
+        requestAnimation;
 
     // Запуск музыки
     mainMenuSound.src = 'audio/main_menu.mp3';
@@ -29,6 +30,7 @@ window.addEventListener('load', () => {
 
     // Запуск игры
     play.addEventListener('click', () => {
+        cancelAnimation(requestAnimation);
         mainMenuSound.pause();
         mainMenuSound.currentTime = 0.0;
         mainPage.style.display = 'none';
@@ -72,6 +74,7 @@ window.addEventListener('load', () => {
 
     // Перезагрузка игры
     restart.addEventListener('click', () => {
+        cancelAnimation(requestAnimation);
         gameover.style.display = 'none';
         wrapper.style.display = 'flex';
         startGame();
@@ -107,6 +110,7 @@ window.addEventListener('load', () => {
 
     //Возврат к главному меню 
     exit.addEventListener('click', () => {
+        cancelAnimation(requestAnimation);
         gameover.style.display = 'none';
         wrapper.style.display = 'none';
         mainPage.style.display = 'flex';
@@ -423,7 +427,7 @@ window.addEventListener('load', () => {
 
 
         // Игровой цикл для всех браузеров
-        const requestAnimation = (() => {
+        requestAnimation = (() => {
             return window.requestAnimationFrame ||
                 window.webkitRequestAnimationFrame ||
                 window.mozRequestAnimationFrame ||
@@ -434,4 +438,14 @@ window.addEventListener('load', () => {
                 };
         })();
     }
+    const cancelAnimation = (() => {
+        return window.cancelAnimationFrame ||
+            window.webkitCancelAnimationFrame ||
+            window.mozCancelAnimationFrame ||
+            window.oCancelAnimationFrame ||
+            window.msCancelAnimationFrame ||
+            function (callback) {
+                const timerId = window.setTimeout(callback, 1000 / 60);
+            };
+    });
 })
