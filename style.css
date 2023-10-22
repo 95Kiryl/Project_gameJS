@@ -195,4 +195,17 @@ audio {
     background-size: 100%;
 }
 
-
+@media (max-width: 900px) {
+    img {
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        position: absolute;
+        width: 160px;
+        height: 130px;
+        top: -14%;
+        left: calc(50% - 75px);
+        cursor: pointer;
+        transition: transform 0.5s;
+    }
+}

@@ -14,9 +14,7 @@ window.addEventListener('load', () => {
         tablePage = document.querySelector('.table'),
         mainMenuSound = document.querySelector('#audioMain'),
         exit = document.querySelector('.exit'),
-        tableRecords = document.querySelector('.tableRecords'),
-        imgPlay = document.querySelector('#imgPlay'),
-        imgRecord = document.querySelector('#imgRecord');
+        tableRecords = document.querySelector('.tableRecords');
 
 
     // Переменные для вывода результатов
@@ -133,30 +131,6 @@ window.addEventListener('load', () => {
         gameover.style.display = 'flex';
         points.innerHTML = `Ваш результат: ${score}`;
         saveScore = score;
-    }
-
-    if (window.outerWidth < 900 && window.outerHeight < 500) {
-        imgPlay.style.sccText = `
-            width: 160px;
-            height: 130px;
-            top: -14%;
-            left: calc(50% - 75px);`;
-        imgRecord.style.sccText = `
-            width: 160px;
-            height: 130px;
-            top: -14%;
-            left: calc(50% - 75px);`;
-    } else if (window.outerWidth < window.outerHeight) {
-        imgPlay.style.sccText = `
-            width: 160px;
-            height: 130px;
-            top: -14%;
-            left: calc(50% - 75px);`;
-        imgRecord.style.sccText = `
-            width: 160px;
-            height: 130px;
-            top: -14%;
-            left: calc(50% - 75px);`;
     }
 
     // Функция игры
