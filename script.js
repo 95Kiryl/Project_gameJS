@@ -14,7 +14,9 @@ window.addEventListener('load', () => {
         tablePage = document.querySelector('.table'),
         mainMenuSound = document.querySelector('#audioMain'),
         exit = document.querySelector('.exit'),
-        tableRecords = document.querySelector('.tableRecords');
+        tableRecords = document.querySelector('.tableRecords'),
+        imgPlay = document.querySelector('#play'),
+        imgRecord = document.querySelector('#record');
 
 
     // Переменные для вывода результатов
@@ -146,9 +148,29 @@ window.addEventListener('load', () => {
         if (window.innerWidth < 900 && window.innerHeight < 500) {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
+            imgPlay.style.sccText = `
+            width: 160px;
+            height: 130px;
+            top: -14%;
+            left: calc(50% - 75px);`;
+            imgRecord.style.sccText = `
+            width: 160px;
+            height: 130px;
+            top: -14%;
+            left: calc(50% - 75px);`;
         } else if (window.innerWidth < window.innerHeight) {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight / 2;
+            imgPlay.style.sccText = `
+            width: 160px;
+            height: 130px;
+            top: -14%;
+            left: calc(50% - 75px);`;
+            imgRecord.style.sccText = `
+            width: 160px;
+            height: 130px;
+            top: -14%;
+            left: calc(50% - 75px);`;
         } else {
             canvas.width = window.innerWidth / 1.5;
             canvas.height = window.innerHeight / 1.2;
@@ -161,9 +183,29 @@ window.addEventListener('load', () => {
             if (window.innerWidth < 900 && window.innerHeight < 500) {
                 canvas.width = window.innerWidth;
                 canvas.height = window.innerHeight;
+                imgPlay.style.sccText = `
+            width: 160px;
+            height: 130px;
+            top: -14%;
+            left: calc(50% - 75px);`;
+                imgRecord.style.sccText = `
+            width: 160px;
+            height: 130px;
+            top: -14%;
+            left: calc(50% - 75px);`;
             } else if (window.innerWidth < window.innerHeight) {
                 canvas.width = window.innerWidth;
                 canvas.height = window.innerHeight / 2;
+                imgPlay.style.sccText = `
+            width: 160px;
+            height: 130px;
+            top: -14%;
+            left: calc(50% - 75px);`;
+                imgRecord.style.sccText = `
+            width: 160px;
+            height: 130px;
+            top: -14%;
+            left: calc(50% - 75px);`;
             } else {
                 canvas.width = window.innerWidth / 1.5;
                 canvas.height = window.innerHeight / 1.2;

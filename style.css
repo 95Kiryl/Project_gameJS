@@ -50,10 +50,9 @@ img {
     background-repeat: no-repeat;
     background-position: center center;
     position: absolute;
-    width: 160px;
-    height: 130px;
-    top: -14%;
-    left: calc(50% - 75px);
+    width: 85%;
+    height: 160%;
+    top: -45%;
     cursor: pointer;
     transition: transform 0.5s;
 }
