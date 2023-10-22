@@ -143,30 +143,30 @@ window.addEventListener('load', () => {
         const canvas = document.querySelector("#myCanvas"),
             context = canvas.getContext("2d");
 
-        if (window.innerWidth < 900 && window.innerHeight < 500) {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        } else if (window.innerWidth < window.innerHeight) {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight / 2;
+        if (document.documentElement.clientWidth < 900 && document.documentElement.clientHeight < 500) {
+            canvas.width = document.documentElement.clientWidth;
+            canvas.height = document.documentElement.clientHeight;
+        } else if (document.documentElement.clientWidth < document.documentElement.clientHeight) {
+            canvas.width = document.documentElement.clientWidth;
+            canvas.height = document.documentElement.clientHeight / 2;
         } else {
-            canvas.width = window.innerWidth / 1.5;
-            canvas.height = window.innerHeight / 1.2;
+            canvas.width = document.documentElement.clientWidth / 1.5;
+            canvas.height = document.documentElement.clientHeight / 1.2;
             runPipes = 3.5;
         }
 
 
         // Изменение размеров экрана
         window.addEventListener('resize', () => {
-            if (window.innerWidth < 900 && window.innerHeight < 500) {
-                canvas.width = window.innerWidth;
-                canvas.height = window.innerHeight;
-            } else if (window.innerWidth < window.innerHeight) {
-                canvas.width = window.innerWidth;
-                canvas.height = window.innerHeight / 2;
+            if (document.documentElement.clientWidth < 900 && document.documentElement.clientHeight < 500) {
+                canvas.width = document.documentElement.clientWidth;
+                canvas.height = document.documentElement.clientHeight;
+            } else if (document.documentElement.clientWidth < document.documentElement.clientHeight) {
+                canvas.width = document.documentElement.clientWidth;
+                canvas.height = document.documentElement.clientHeight / 2;
             } else {
-                canvas.width = window.innerWidth / 1.5;
-                canvas.height = window.innerHeight / 1.2;
+                canvas.width = document.documentElement.clientWidth / 1.5;
+                canvas.height = document.documentElement.clientHeight / 1.2;
                 runPipes = 3.5;
             }
         })
