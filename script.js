@@ -157,7 +157,7 @@ window.addEventListener('load', () => {
 
 
         // Изменение размеров экрана
-        window.addEventListener('resize', () => {
+        screen.orientation.addEventListener('change', () => {
             if (window.innerWidth < 900 && window.innerHeight < 500) {
                 canvas.width = window.innerWidth;
                 canvas.height = window.innerHeight;
