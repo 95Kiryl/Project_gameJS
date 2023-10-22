@@ -136,6 +136,9 @@ window.addEventListener('load', () => {
     // Функция игры
     const startGame = () => {
 
+        //движение труб
+        let runPipes = 2.5;
+
         // Получение контекста и задание размеров канвас
         const canvas = document.querySelector("#myCanvas"),
             context = canvas.getContext("2d");
@@ -149,6 +152,7 @@ window.addEventListener('load', () => {
         } else {
             canvas.width = window.innerWidth / 1.5;
             canvas.height = window.innerHeight / 1.2;
+            runPipes = 3.5;
         }
 
 
@@ -163,6 +167,7 @@ window.addEventListener('load', () => {
             } else {
                 canvas.width = window.innerWidth / 1.5;
                 canvas.height = window.innerHeight / 1.2;
+                runPipes = 3.5;
             }
         })
 
@@ -228,10 +233,6 @@ window.addEventListener('load', () => {
         // Позиция птицы
         let birdPosX = w * 0.3,
             birdPosY = h * 0.3;
-
-
-        //движение труб
-        let runPipes = 2.5;
 
 
         // Сила притяжения
