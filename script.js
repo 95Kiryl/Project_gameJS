@@ -157,7 +157,7 @@ window.addEventListener('load', () => {
 
 
         // Изменение размеров экрана
-        screen.orientation.addEventListener('change', () => {
+        window.addEventListener('resize', () => {
             if (window.innerWidth < 900 && window.innerHeight < 500) {
                 canvas.width = window.innerWidth;
                 canvas.height = window.innerHeight;
@@ -170,6 +170,7 @@ window.addEventListener('load', () => {
                 runPipes = 3.5;
             }
         })
+
 
         // Загрузка изоражений
         const gameBack = new Image(),
