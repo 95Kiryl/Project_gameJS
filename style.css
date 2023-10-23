@@ -71,7 +71,8 @@ img:hover {
     justify-content: center;
     background: url("image/back.png");
     background-repeat: no-repeat;
-    background-position: center bottom;
+    background-position: center center;
+    background-size: cover;
     display: none;
 }
 
@@ -207,5 +208,13 @@ audio {
         left: calc(50% - 75px);
         cursor: pointer;
         transition: transform 0.5s;
+    }
+
+    .play {
+        left: 20px;
+    }
+
+    .records {
+        right: 15px;
     }
 }

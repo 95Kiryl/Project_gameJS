@@ -152,7 +152,7 @@ window.addEventListener('load', () => {
         } else {
             canvas.width = document.documentElement.clientWidth / 1.5;
             canvas.height = document.documentElement.clientHeight / 1.2;
-            runPipes = 3.5;
+            runPipes = 4;
         }
 
 
@@ -167,7 +167,7 @@ window.addEventListener('load', () => {
             } else {
                 canvas.width = document.documentElement.clientWidth / 1.5;
                 canvas.height = document.documentElement.clientHeight / 1.2;
-                runPipes = 3.5;
+                runPipes = 4;
             }
         })
 
